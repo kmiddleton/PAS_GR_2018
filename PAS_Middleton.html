@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 
 # Statistical Inference
 
-## What does data tell us?
+## Putting data first
 
 ### Kevin M. Middleton, Ph.D.
 
@@ -27,10 +27,206 @@ class: center, middle, inverse, title-slide
 ![:scale 70%](https://i.imgur.com/9btotx8.png)
 
 ---
+
+## Frequentists
+
+---
 class: inverse, center, middle
 
 background-image: url(https://i.imgur.com/Llr41Sb.png)
 background-size: contain
+
+## (Re)emergence of Bayesian inference
+
+---
+
+## Bayes history
+
+---
+
+## In praise of gambling
+
+.center[
+![:scale 44%](https://i.imgur.com/C4LOeAK.jpg)![:scale 40%](https://i.imgur.com/x0d2CX4.jpg)
+
+Abraham de Moivre
+]
+
+---
+
+## In praise of gambling
+
+.pull-left[
+![:scale 90%](https://i.imgur.com/EyuUNeB.jpg)
+]
+
+.pull-right[
+What is the probability of getting dealt 4 aces in a poker hand?
+]
+
+`$$\frac{4}{52}\frac{3}{51}\frac{2}{50}\frac{1}{49}\frac{48}{48}\times 5 = 0.000018 = 0.0018\%$$`
+
+.center[
+(There is nothing special about aces.)
+]
+
+---
+
+## Inverse probability
+
+&gt; Given that a poker player has dealt three hands in a row with four aces, *what is the probability that the dealer is cheating*?
+
+![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)![:scale 33%](https://i.imgur.com/EyuUNeB.jpg)
+
+--
+
+`$$0.000018^3 = 0.00000000000058\%$$`
+
+---
+
+## Thomas Bayes
+
+.center[
+![:scale 44%](https://i.imgur.com/LlYJtH4.jpg)
+]
+
+---
+
+## Pierre Simon Laplace
+
+.center[
+![:scale 44%](https://i.imgur.com/eWHLAUB.jpg)
+1774
+]
+
+---
+
+## A little math
+
+`$$P(a,b) = P(a|b)P(b)$$`
+
+`$$P(a,b) = P(b|a)P(a)$$`
+
+`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
+---
+
+## For scientific inference
+
+`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
+
+`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{P(data)}$$`
+
+`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{\Sigma_{h'\in H}P(d'|h')P(h')}$$`
+
+Posterior probability is the product of the likelihood and prior normalized by their sum (to make the probability sum to 1).
+
+---
+
+## Rolling dice
+
+`$$P(a,b) = P(a|b)P(b)$$`
+
+`$$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$`
+
+---
+
+## Your brain as a Bayesian engine
+
+.pull-left[Two movies open the same week.
+
+**What is the probability that each will earn $200 million?**
+]
+
+.pull-right[
+![:scale 80%](https://i.imgur.com/XVU4S2T.jpg)
+]
+
+---
+
+## Your brain as a Bayesian engine
+
+.pull-left[Two movies open the same week.
+
+**What is the probability that each will earn $200 million?**
+]
+
+.pull-right[
+![:scale 80%](https://i.imgur.com/XVU4S2T.jpg)
+]
+
+1. One movie earned $100 million in the first weekend
+2. The other movie earned $1 million in the first weekend
+
+---
+
+## Example 2
+
+---
+
+## Bayesian clinical reasoning
+
+**Data**: Your patient has a cough
+
+**Hypotheses**:
+
+--
+
+1. Patient has a cold
+
+--
+
+2. Patient has lung cancer
+
+--
+
+3. Patient has gastroenteritis
+
+---
+
+# Priors
+
+Some reasonable priors:
+
+--
+
+1. Cold (lifetime risk ~99%)
+
+--
+
+2. Lung cancer (lifetime risk ~6%)
+
+--
+
+3. Gastroenteritis (lifetime risk ~99%)
+
+
+---
+
+# Posterior
+
+1. High prior x high likelihood = high posterior probability
+
+--
+
+2. Low prior x low likelihood = low posterior probability
+
+--
+
+3. High prior x low likelihood = low posterior probability
+
+---
+
+## Familywise error rate
+
+![](PAS_Middleton_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+---
+
+## Bayesian decisions
+
+&gt; The only real novelty on the Bayesian approach lies in the fact that it provides a *formal mechanism* for taking account of these preferences and weights instead of leaving it to the decision maker's unaided intuition to determine their implications. We believe, however, that without this formalization decisions under uncertainty have been and will remain essentially arbitrary, as evidenced by the fact that, in most statistical practice, consequences and performance characteristics receive mere lip service while decisions are actually made by treating the numbers .05 and .95 with the same superstitious awe that is usually reserved for the number 13.
+
+Raiffa and Schlaifer, 1961 *Applied Statistical Decision Theory*
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macros.js"></script>

@@ -18,6 +18,9 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(knitr)
+library(wesanderson)
 ```
 
 class: center, middle, inverse, title-slide
@@ -35,12 +38,16 @@ class: center, middle, inverse, title-slide
 ![:scale 70%](https://i.imgur.com/9btotx8.png)
 
 ---
+
+## Frequentists
+
+---
 class: inverse, center, middle
 
 background-image: url(https://i.imgur.com/Llr41Sb.png)
 background-size: contain
 
-# (Re)emergence of Bayesian inference
+## (Re)emergence of Bayesian inference
 
 ---
 
@@ -88,21 +95,25 @@ $$0.000018^3 = 0.00000000000058\%$$
 
 ---
 
-# Thomas Bayes
+## Thomas Bayes
 
-![](https://i.imgur.com/LlYJtH4.jpg)
+.center[
+![:scale 44%](https://i.imgur.com/LlYJtH4.jpg)
+]
 
 ---
 
-# Pierre Simon Laplace
+## Pierre Simon Laplace
+
+.center[
+![:scale 44%](https://i.imgur.com/eWHLAUB.jpg)
 
 1774
-
-![](https://i.imgur.com/eWHLAUB.jpg)
+]
 
 ---
 
-# A little math
+## A little math
 
 $$P(a,b) = P(a|b)P(b)$$
 
@@ -246,6 +257,8 @@ ggplot(FWERs, aes(x = k, y = FWER, color = alpha)) +
         axis.text = element_text(size = 18))
 
 ```
+
+---
 
 ## Bayesian decisions
 
