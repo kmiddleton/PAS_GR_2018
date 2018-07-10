@@ -40,14 +40,24 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Goals
+## Goals for today
+
+- Think about why we use traditional (frequentist) statistics
+- Think about how we make decisions everyday
+- Combine the two into a statistical framework
+- How we use these approaches in my lab to make draw conclusions based on data
 
 --
 
 ## Thinking about how trainees learn statistics
 
+- Undergraduates
+    - Mostly not required for undergraduate science majors
 - Graduate school
+    - One or more courses
 - Medical school
+    - Someday to be an MCAT prerequisite
+    - IPC4 initially at MU via Epidemiology
 
 ---
 class: center, middle
@@ -71,7 +81,6 @@ class: center, middle
 
 - NHST
 - Confidence intervals
-- Effect sizes
 
 ---
 
@@ -127,6 +136,8 @@ $$0.000018^3 = 0.00000000000058\%$$
 
 .center[
 ![:scale 44%](https://i.imgur.com/LlYJtH4.jpg)
+
+(Probably not Thomas Bayes)
 ]
 
 ---
@@ -136,7 +147,6 @@ $$0.000018^3 = 0.00000000000058\%$$
 .center[
 ![:scale 44%](https://i.imgur.com/eWHLAUB.jpg)
 
-1774
 ]
 
 ---
@@ -199,7 +209,27 @@ $$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$
 
 ---
 
-## Example 2
+## Patient with chest pain
+
+Patient presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+> What's the diagnosis?
+
+---
+
+## Patient with chest pain
+
+**23 y/o female patient with history of anxiety** presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+> What's the diagnosis?
+
+---
+
+## Patient with chest pain
+
+**67 y/o male patient with history of hypertension, DM, and hyperlipidemia** presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+> What's the diagnosis?
 
 ---
 
