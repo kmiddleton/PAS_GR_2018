@@ -28,14 +28,24 @@ class: center, middle, inverse, title-slide
 
 ---
 
-## Goals
+## Goals for today
+
+- Think about why we use traditional (frequentist) statistics
+- Think about how we make decisions everyday
+- Combine the two into a statistical framework
+- How we use these approaches in my lab to make draw conclusions based on data
 
 --
 
 ## Thinking about how trainees learn statistics
 
+- Undergraduates
+    - Mostly not required for undergraduate science majors
 - Graduate school
+    - One or more courses
 - Medical school
+    - Someday to be an MCAT prerequisite
+    - IPC4 initially at MU via Epidemiology
 
 ---
 class: center, middle
@@ -59,7 +69,6 @@ class: center, middle
 
 - NHST
 - Confidence intervals
-- Effect sizes
 
 ---
 
@@ -115,6 +124,8 @@ What is the probability of getting dealt 4 aces in a poker hand?
 
 .center[
 ![:scale 44%](https://i.imgur.com/LlYJtH4.jpg)
+
+(Probably not Thomas Bayes)
 ]
 
 ---
@@ -124,7 +135,6 @@ What is the probability of getting dealt 4 aces in a poker hand?
 .center[
 ![:scale 44%](https://i.imgur.com/eWHLAUB.jpg)
 
-1774
 ]
 
 ---
@@ -187,7 +197,27 @@ Posterior probability is the product of the likelihood and prior normalized by t
 
 ---
 
-## Example 2
+## Patient with chest pain
+
+Patient presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+&gt; What's the diagnosis?
+
+---
+
+## Patient with chest pain
+
+**23 y/o female patient with history of anxiety** presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+&gt; What's the diagnosis?
+
+---
+
+## Patient with chest pain
+
+**67 y/o male patient with history of hypertension, DM, and hyperlipidemia** presents with substernal chest pain on exertion, gradually getting worse over 1 month. Pain not associated with meals. No nausea/vomiting.
+
+&gt; What's the diagnosis?
 
 ---
 
@@ -318,12 +348,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   d.head.appendChild(s);
 })();</script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -70,8 +70,8 @@ class: center, middle
 
 ## Assumptions
 
-- Normality
 - Homogeneity of variances
+- Normality of residuals
 - Large sample sizes
 - Repeated experiments
 
