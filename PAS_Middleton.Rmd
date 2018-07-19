@@ -22,6 +22,11 @@ library(tidyverse)
 library(knitr)
 library(wesanderson)
 library(cowplot)
+library(readxl)
+library(rstanarm)
+library(bayesplot)
+library(sjstats)
+theme_set(theme_cowplot())
 ```
 
 class: center, middle, inverse, title-slide
@@ -388,7 +393,33 @@ $$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$
 
 ---
 
-## Mouse masses example
+## Mouse weaning masses
+
+```{r}
+M <- read_excel("~/Documents/GitHub/quant_methods/data/Mouse_Weaning_Data.xlsx") %>% 
+  mutate(Sex = if_else(Sex == 0, "Female", "Male")) %>% 
+  select(WnMass, Sex) %>% 
+  drop_na()
+```
+
+```{r}
+M %>% 
+  ggplot(aes(WnMass)) +
+  geom_histogram(fill = "darkblue") +
+  labs(x = "Weaning Mass (g)", y = "Density") +
+  facet_grid(Sex ~ .)
+```
+
+```{r}
+fm <- stan_glm(WnMass ~ Sex, data = M)
+mcmc_trace(as.array(fm))
+
+mcmc_hist(as.matrix(fm))
+
+post <- as.data.frame(fm)
+hdi(post$SexMale, prob = 0.95)
+```
+
 
 ---
 
