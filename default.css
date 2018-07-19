@@ -16,7 +16,7 @@ h1, h2 {
   font-weight: normal;
 }
 
-.remark-code, .remark-inline-code { 
+.remark-code, .remark-inline-code {
   font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
 }
 
@@ -93,6 +93,7 @@ img, video, iframe {
 blockquote {
   border-left: solid 5px lightgray;
   padding-left: 1em;
+  font-size: 175%;
 }
 table {
   margin: auto;

@@ -30,22 +30,28 @@ class: center, middle, inverse, title-slide
 
 ## Goals for today
 
-- Think about why we use traditional (frequentist) statistics
-- Think about how we make decisions everyday
-- Combine the two into a statistical framework
-- How we use these approaches in my lab to make draw conclusions based on data
+1. Think about why &amp; how we use traditional (frequentist) statistics
+1. Think about how we make decisions everyday
+1. Combine the two into a statistical framework
+1. Discuss how we use these approaches in my lab to make draw conclusions based on data
 
---
+---
 
-## Thinking about how trainees learn statistics
+## How do trainees learn statistics?
 
-- Undergraduates
-    - Mostly not required for undergraduate science majors
-- Graduate school
-    - One or more courses
-- Medical school
-    - Someday to be an MCAT prerequisite
-    - IPC4 initially at MU via Epidemiology
+### Undergraduate
+
+- Mostly not required for undergraduate science majors (e.g., biology)
+
+### Graduate
+
+- One or more courses
+- Practical experience
+
+### School of Medicine
+
+- Someday to be an MCAT prerequisite
+- IPC4 initially at MU via Epidemiology
 
 ---
 class: center, middle
@@ -56,19 +62,60 @@ class: center, middle
 
 ---
 
-## Assumptions
+## Common assumptions
 
-- Normality
 - Homogeneity of variances
+- Normality of residuals
 - Large sample sizes
-- Repeated experiments
+- Experiments repeated
 
 ---
 
-## What do frequentist approaches really mean?
+## P-values and the peril of null hypothesis testing
 
-- NHST
-- Confidence intervals
+&gt; What is the probability of observing these data if the null hypothesis were true?
+
+.center[
+![:scale 70%](https://i.imgur.com/fm5528s.png)
+]
+
+---
+
+## Chimeras
+
+![:scale 28%](https://i.imgur.com/8MATapS.jpg)![:scale 37%](https://i.imgur.com/yNqqwCY.jpg)![:scale 33%](https://i.imgur.com/PzsN7V4.jpg)
+
+**Fisher**: *P*-values as a ad hoc indicator
+
+**Neyman &amp; Pearson**: Choosing from among statistical models
+
+---
+
+## The last ~50 years...
+
+1. Fisher's P &lt; 0.05 is "significant"
+    - Fisher though 0.05 was "good enough"
+2. Neyman and Pearson's hypothesis testing
+    - Not considering "null hypotheses"
+    - Straw man hypothesis (no difference, no effect)
+
+.center[
+![:scale 75%](https://i.imgur.com/tedA6Ts.png)
+]
+
+---
+
+## Null hypothesis statistical testing
+
+1. Design experiment
+1. Collect data
+1. Analyze data, evaluate *P*-value
+    - Reject null hypothesis (or not)
+1. Conclude
+
+---
+
+## Confidence intervals
 
 ---
 
@@ -136,35 +183,6 @@ What is the probability of getting dealt 4 aces in a poker hand?
 ![:scale 44%](https://i.imgur.com/eWHLAUB.jpg)
 
 ]
-
----
-
-## A little math
-
-`$$P(a,b) = P(a|b)P(b)$$`
-
-`$$P(a,b) = P(b|a)P(a)$$`
-
-`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
----
-
-## For scientific inference
-
-`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
-
-`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{P(data)}$$`
-
-`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{\Sigma_{h'\in H}P(d'|h')P(h')}$$`
-
-Posterior probability is the product of the likelihood and prior normalized by their sum (to make the probability sum to 1).
-
----
-
-## Rolling dice
-
-`$$P(a,b) = P(a|b)P(b)$$`
-
-`$$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$`
 
 ---
 
@@ -277,7 +295,7 @@ Some reasonable priors:
 ## A patient with the pox
 
 .center[
-![scale 100%](https://i.imgur.com/WITJSIT.jpg)
+![scale 120%](https://i.imgur.com/WITJSIT.jpg)
 ]
 
 ---
@@ -285,7 +303,7 @@ Some reasonable priors:
 ## Pox: Chicken or Small?
 
 .center[
-![scale 70%](https://i.imgur.com/bbT8vYn.jpg)
+![scale 100%](https://i.imgur.com/bbT8vYn.jpg)
 ]
 
 ---
@@ -298,28 +316,79 @@ Some reasonable priors:
 
 ---
 
-## Familywise error rate
-
-
-```
-## Warning: Removed 1 rows containing missing values (geom_path).
-```
-
-![](PAS_Middleton_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
-
----
-
 ## Bayesian decisions
 
 &gt; The only real novelty on the Bayesian approach lies in the fact that it provides a *formal mechanism* for taking account of these preferences and weights instead of leaving it to the decision maker's unaided intuition to determine their implications. We believe, however, that without this formalization decisions under uncertainty have been and will remain essentially arbitrary, as evidenced by the fact that, in most statistical practice, consequences and performance characteristics receive mere lip service while decisions are actually made by treating the numbers .05 and .95 with the same superstitious awe that is usually reserved for the number 13.
 
+.right[
 Raiffa and Schlaifer, 1961 *Applied Statistical Decision Theory*
+]
 
 ---
 
-## Gators
+## A little math
 
-![scale 80%](https://i.imgur.com/rBXE5Hv.png)
+`$$P(a, b) = P(a|b)P(b)$$`
+
+`$$P(a,b) = P(b|a)P(a)$$`
+
+`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
+
+---
+
+## For scientific inference
+
+`$$P(b|a) = \frac{P(a|b)P(b)}{P(a)}$$`
+
+`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{P(data)}$$`
+
+`$$P(hypothesis|data) = \frac{P(data|hypo)P(hypo)}{\Sigma_{h'\in H}P(d'|h')P(h')}$$`
+
+Posterior probability is the product of the likelihood and prior normalized by their sum (to make the probability sum to 1).
+
+---
+
+## Rolling dice
+
+`$$P(a,b) = P(a|b)P(b)$$`
+
+`$$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$`
+
+---
+
+## Mechanics of Bayesian inference
+
+---
+
+## Why now (and not 100 years ago)?
+
+1. Fisher looms large
+1. Monte Carlo methods (Manhattan Project)
+1. Computers (ENIAC)
+
+.center[
+![scale 5%](https://i.imgur.com/gKeVZdp.jpg) ![scale 5%](https://i.imgur.com/SMbYmEt.jpg)
+]
+
+---
+
+## Benefits of Bayesian inference
+
+---
+
+## Mouse masses example
+
+---
+
+## Mouse limb bones
+
+---
+
+## Alligator bone mechanics
+
+.center[
+![scale 100%](https://i.imgur.com/rBXE5Hv.png)
+]
 
 ---
 
