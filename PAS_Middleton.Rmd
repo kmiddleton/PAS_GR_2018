@@ -399,6 +399,7 @@ $$P(roll~1, roll~1) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}$$
 M <- read_excel("~/Documents/GitHub/quant_methods/data/Mouse_Weaning_Data.xlsx") %>% 
   mutate(Sex = if_else(Sex == 0, "Female", "Male")) %>% 
   select(WnMass, Sex) %>% 
+  rename(b = Sex) %>% 
   drop_na()
 ```
 
@@ -407,17 +408,21 @@ M %>%
   ggplot(aes(WnMass)) +
   geom_histogram(fill = "darkblue") +
   labs(x = "Weaning Mass (g)", y = "Density") +
-  facet_grid(Sex ~ .)
+  facet_grid(b ~ .)
 ```
 
 ```{r}
-fm <- stan_glm(WnMass ~ Sex, data = M)
+M %>% group_by(b) %>% tally()
+```
+
+```{r}
+fm <- stan_glm(WnMass ~ b, data = M)
 mcmc_trace(as.array(fm))
 
 mcmc_hist(as.matrix(fm))
 
 post <- as.data.frame(fm)
-hdi(post$SexMale, prob = 0.95)
+hdi(post$bMale, prob = 0.95)
 ```
 
 
